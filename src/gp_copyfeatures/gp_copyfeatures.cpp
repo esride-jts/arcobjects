@@ -33,6 +33,8 @@
 
 #include "stdafx.h"
 
+using namespace std;
+
 // gp_copyfeatures.cpp : A sample C++ executable which uses the IGeoprocessor object to perform a number of
 //                       Geoprocessing operations. This sample will extract features to a new feature class
 //                       based on a Location and an attribute query.
@@ -49,7 +51,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		ArcGISVersionLib::IArcGISVersionPtr ipArcGISVersion(__uuidof(ArcGISVersionLib::VersionManager));
 		if (0 == ipArcGISVersion)
 		{
-		   //wcout << L"Failed to CoCreate ArcGISVersion." << endl;
+		   wcout << L"Failed to CoCreate ArcGISVersion." << endl;
 		   return -1;
 		}
 		// Set ARcGIS version 
@@ -57,18 +59,18 @@ int _tmain(int argc, _TCHAR* argv[])
 		CComBSTR version = L"10.7";
 		if (FAILED(ipArcGISVersion->LoadVersion(ArcGISVersionLib::esriArcGISDesktop, version, &bSuccess)))
 		{
-		   //wcout << L"Load version operation failed" << endl;
+		   wcout << L"Load version operation failed" << endl;
 		   return -2;
 		}
 		if (VARIANT_FALSE == bSuccess)
 		{
-		   //wcout << L"Failed to load version.  Success is false." << endl;
+		   wcout << L"Failed to load version.  Success is false." << endl;
 		   return -3;
 		}
 		IAoInitializePtr ipInit(__uuidof(AoInitialize));
 		if (0 == ipInit)
 		{
-		   //wcout << L"Failed to CoCreate AoInitialize." << endl;
+		   wcout << L"Failed to CoCreate AoInitialize." << endl;
 		   return -1;
 		}
 
