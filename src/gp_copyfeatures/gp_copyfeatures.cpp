@@ -54,7 +54,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		}
 		// Set ARcGIS version 
 		VARIANT_BOOL bSuccess(VARIANT_FALSE);
-		CComBSTR version = L"10.2";
+		CComBSTR version = L"10.7";
 		if (FAILED(ipArcGISVersion->LoadVersion(ArcGISVersionLib::esriArcGISDesktop, version, &bSuccess)))
 		{
 		   //wcout << L"Load version operation failed" << endl;
